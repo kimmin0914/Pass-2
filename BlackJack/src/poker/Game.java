@@ -34,7 +34,7 @@ public class Game {
             dealer.sumScore = 0;
 
             // 배팅 로직 시작
-            System.out.println("\n현재 남은 돈: " + me.money + "원\n배팅할 금액을 입력해주세요. > ");
+            System.out.print("\n현재 남은 돈: " + me.money + "원\n배팅할 금액을 입력해주세요. > ");
             int myBet = input.nextInt();
             input.nextLine();
 
@@ -48,7 +48,7 @@ public class Game {
 
             // 플레이어 턴 루프 시작 (Hit or Stand)
             while (true) {
-                System.out.println("\n 카드를 더 받으시겠습니까? (1: Hit, 2: Stand) > ");
+                System.out.print("\n 카드를 더 받으시겠습니까? (1: Hit, 2: Stand) > ");
                 String choice = input.nextLine();
 
                 if (choice.equals("1")) {
@@ -101,7 +101,7 @@ public class Game {
             }
 
             // 재시작 여부 확인 로직 시작
-            System.out.println("\n한 판 더 하시겠습니까? (1: 예, 2: 아니오) > ");
+            System.out.print("\n한 판 더 하시겠습니까? (1: 예, 2: 아니오) > ");
             String replayChoice = input.nextLine();
 
             if (replayChoice.equals("2")) {
