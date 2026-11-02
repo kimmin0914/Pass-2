@@ -6,17 +6,15 @@ public class BombGame {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // 💡 오직 문자열만 담는 가방! (오른쪽  잊지 마세요!)
+
         ArrayList wires = new ArrayList();
 
-        // 가방에 전선의 '결과'만 몰래 집어넣습니다. (색상 힌트 제거)
         wires.add("폭발");
         wires.add("해제");
         wires.add("랜덤"); // 행운 or 불행
         wires.add("안전");
         wires.add("안전");
 
-        // 💡 [핵심] 가방 안의 결과들을 매 판마다 완벽하게 무작위로 섞습니다.
         Collections.shuffle(wires);
 
         int turnsLeft = 3; // 남은 기회 3번
@@ -25,7 +23,6 @@ public class BombGame {
 
         while (turnsLeft > 0) {
             System.out.println("==== 남은 전선 목록 ====");
-            // 💡 [힌트 완전 제거] 정답을 화면에 출력하지 않고 'N번 전선'으로만 보여줍니다.
             for (int i = 0; i < wires.size(); i++) {
                 System.out.println(" ⚡ " + (i + 1) + "번 전선");
             }
@@ -39,11 +36,9 @@ public class BombGame {
                 continue;
             }
 
-            // 가방에서 선택한 번호를 꺼냅니다. (인텔리제이 에러 방지용 (String) 유지)
             String cutWire = (String) wires.remove(choice - 1);
             System.out.println("\n✂️ [" + choice + "번 전선]을(를) 잘랐습니다...");
 
-            // 숨겨져 있던 글자가 무엇인지(equals)로 결과를 판정합니다!
             if (cutWire.equals("폭발")) {
                 System.out.println("💥 쾅! 폭발선이었습니다! [게임 오버]");
                 return;
